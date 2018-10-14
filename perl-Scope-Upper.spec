@@ -4,14 +4,14 @@
 #
 Name     : perl-Scope-Upper
 Version  : 0.31
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/V/VP/VPIT/Scope-Upper-0.31.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/V/VP/VPIT/Scope-Upper-0.31.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libs/libscope-upper-perl/libscope-upper-perl_0.30-1.debian.tar.xz
 Summary  : 'Act on upper scopes.'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Scope-Upper-lib
+Requires: perl-Scope-Upper-lib = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -25,8 +25,8 @@ SYNOPSIS
 %package dev
 Summary: dev components for the perl-Scope-Upper package.
 Group: Development
-Requires: perl-Scope-Upper-lib
-Provides: perl-Scope-Upper-devel
+Requires: perl-Scope-Upper-lib = %{version}-%{release}
+Provides: perl-Scope-Upper-devel = %{version}-%{release}
 
 %description dev
 dev components for the perl-Scope-Upper package.
@@ -70,9 +70,9 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -81,7 +81,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/Scope/Upper.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/Scope/Upper.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -89,4 +89,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/auto/Scope/Upper/Upper.so
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/auto/Scope/Upper/Upper.so
