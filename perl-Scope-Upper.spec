@@ -4,7 +4,7 @@
 #
 Name     : perl-Scope-Upper
 Version  : 0.31
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/V/VP/VPIT/Scope-Upper-0.31.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/V/VP/VPIT/Scope-Upper-0.31.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libs/libscope-upper-perl/libscope-upper-perl_0.30-1.debian.tar.xz
