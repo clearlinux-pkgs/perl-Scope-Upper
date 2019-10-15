@@ -1,5 +1,5 @@
 PKG_NAME := perl-Scope-Upper
-URL = https://cpan.metacpan.org/authors/id/V/VP/VPIT/Scope-Upper-0.31.tar.gz
-ARCHIVES = http://http.debian.net/debian/pool/main/libs/libscope-upper-perl/libscope-upper-perl_0.30-1.debian.tar.xz deblicense/
+URL = https://cpan.metacpan.org/authors/id/V/VP/VPIT/Scope-Upper-0.32.tar.gz
+ARCHIVES = 
 
 include ../common/Makefile.common
