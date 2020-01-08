@@ -4,13 +4,13 @@
 #
 Name     : perl-Scope-Upper
 Version  : 0.32
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/V/VP/VPIT/Scope-Upper-0.32.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/V/VP/VPIT/Scope-Upper-0.32.tar.gz
-Summary  : Act on upper scopes.
+Summary  : 'Act on upper scopes.'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Scope-Upper-lib = %{version}-%{release}
+Requires: perl-Scope-Upper-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -24,25 +24,25 @@ SYNOPSIS
 %package dev
 Summary: dev components for the perl-Scope-Upper package.
 Group: Development
-Requires: perl-Scope-Upper-lib = %{version}-%{release}
 Provides: perl-Scope-Upper-devel = %{version}-%{release}
-Requires: perl-Scope-Upper = %{version}-%{release}
 Requires: perl-Scope-Upper = %{version}-%{release}
 
 %description dev
 dev components for the perl-Scope-Upper package.
 
 
-%package lib
-Summary: lib components for the perl-Scope-Upper package.
-Group: Libraries
+%package perl
+Summary: perl components for the perl-Scope-Upper package.
+Group: Default
+Requires: perl-Scope-Upper = %{version}-%{release}
 
-%description lib
-lib components for the perl-Scope-Upper package.
+%description perl
+perl components for the perl-Scope-Upper package.
 
 
 %prep
 %setup -q -n Scope-Upper-0.32
+cd %{_builddir}/Scope-Upper-0.32
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -78,12 +78,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Scope/Upper.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Scope::Upper.3
 
-%files lib
+%files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/Scope/Upper/Upper.so
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Scope/Upper.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/Scope/Upper/Upper.so
