@@ -4,7 +4,7 @@
 #
 Name     : perl-Scope-Upper
 Version  : 0.33
-Release  : 23
+Release  : 24
 URL      : https://cpan.metacpan.org/authors/id/V/VP/VPIT/Scope-Upper-0.33.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/V/VP/VPIT/Scope-Upper-0.33.tar.gz
 Summary  : 'Act on upper scopes.'
