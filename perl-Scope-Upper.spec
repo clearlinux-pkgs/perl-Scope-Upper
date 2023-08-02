@@ -5,7 +5,7 @@
 #
 Name     : perl-Scope-Upper
 Version  : 0.34
-Release  : 26
+Release  : 27
 URL      : https://cpan.metacpan.org/authors/id/V/VP/VPIT/Scope-Upper-0.34.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/V/VP/VPIT/Scope-Upper-0.34.tar.gz
 Summary  : 'Act on upper scopes.'
@@ -54,7 +54,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
 if test -f Makefile.PL; then
-%{__perl} Makefile.PL
+%{__perl} -I. Makefile.PL
 make  %{?_smp_mflags}
 else
 %{__perl} Build.PL
